@@ -1,2 +1,2 @@
 # GSIH-WEB-UI
-Web application UI for Gujarat Smart India Hackathon
+Web application UI for Gujarat Smart Hackathon
