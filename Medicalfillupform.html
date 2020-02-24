@@ -1,208 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!--===============================================================================================-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style type="text/css">
-body{
+  <title>MEdical Form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!--FIll up form style and script-->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    
+    body{
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+
+    }
+    #particles-js{
+      height: 50%;
+      background: #262626;
+    }
+    .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+
+   text-align: center;
+}
+
+button{
+  font-family: Montserrat-Bold;
+  font-size: 15px;
+  line-height: 1.5;
   color: #fff;
-  background: #ffffff;
-  font-family: 'Roboto', sans-serif;
-}
-  .form-control{
-  height: 40px;
-  box-shadow: none;
-  color: #969fa4;
-}
-.form-control:focus{
-  border-color: #5cb85c;
-}
-  .form-control, .btn{        
-      border-radius: 3px;
-  }
-.signup-form{
-  width: 400px;
-  margin: 0 auto;
-  padding: 30px 0;
-}
-.signup-form h2{
-  color: #636363;
-      margin: 0 0 15px;
-  position: relative;
-  text-align: center;
-  }
-.signup-form h2:before, .signup-form h2:after{
-  content: "";
-  height: 2px;
-  width: 30%;
-  background: #d4d4d4;
-  position: absolute;
-  top: 50%;
-  z-index: 2;
-}	
-.signup-form h2:before{
-  left: 0;
-}
-.signup-form h2:after{
-  right: 0;
-}
-  .signup-form .hint-text{
-  color: #999;
-  margin-bottom: 30px;
-  text-align: center;
-}
-  .signup-form form{
-  color: #999;
-  border-radius: 3px;
-    margin-bottom: 15px;
-      background: #f2f3f7;
-      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-      padding: 30px;
-  }
-.signup-form .form-group{
-  margin-bottom: 20px;
-}
-.signup-form input[type="checkbox"]{
-  margin-top: 3px;
-}
-.signup-form .btn{        
-      font-size: 16px;
-      font-weight: bold;		
-  min-width: 140px;
-      outline: none !important;
-  }
-.signup-form .row div:first-child{
-  padding-right: 10px;
-}
-.signup-form .row div:last-child{
-  padding-left: 10px;
-}    	
-  .signup-form a{
-  color: #fff;
-  text-decoration: underline;
-}
-  .signup-form a:hover{
-  text-decoration: none;
-}
-.signup-form form a{
-  color: #5cb85c;
-  text-decoration: none;
-}	
-.signup-form form a:hover{
-  text-decoration: underline;
-}  
-/*Experiment*/
-.container-login100 {
-width: 100%;  
-min-height: 100vh;
-display: -webkit-box;
-display: -webkit-flex;
-display: -moz-box;
-display: -ms-flexbox;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-padding: 15px;
-background: #9053c7;
-background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
-background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
-background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
-background: linear-gradient(-135deg, #c850c0, #4158d0);
-}
-
-.wrap-login100 {
-width: 960px;
-background: #fff;
-border-radius: 10px;
-overflow: hidden;
-
-display: -webkit-box;
-display: -webkit-flex;
-display: -moz-box;
-display: -ms-flexbox;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-padding: 50px 50px 2px 2px;
-}
-
-</style>
-</head>
-<body>
-  <div class="container-login100">
-    <div class="wrap-login100">
-  <nav class="navbar navbar-expand-md navbar-light bg-light justify-content-center">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse w-100 flex-md-column" id="navbarCollapse">
-        <ul class="navbar-nav ml-auto small mb-2 mb-md-0">
-            <li class="nav-item active">
-                <a class="nav-link py-1" href="Patientprofile.html">Patient Profile</a>
-            </li>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <li class="nav-item">
-                <a class="nav-link py-1" href="Patienthistory.html">Patient History</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-</div>
-</div>
-
-
-
-      
-        
-        
+  text-transform: uppercase;
   
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
 
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
 
-    <!--===============================================================================================-->	
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
-		$('.js-tilt').tilt({
-			scale: 1.1
-		})
-	</script>
-<!--===============================================================================================-->
-    <script src="js/main.js"></script>
+button:hover{
+  background: #262626;
+}
+/*Profile pic*/
+.profile-header-container{
+  margin: 0 auto;
+  text-align: center;
+}
 
+.profile-header-img {
+  padding: 54px;
+}
+
+.profile-header-img > img.img-circle {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #51D2B7;
+}
+
+.profile-header {
+  margin-top: 43px;
+}
+
+/**
+* Ranking component
+*/
+.rank-label-container {
+  margin-top: -19px;
+  /* z-index: 1000; */
+  text-align: center;
+}
+
+.label.label-default.rank-label {
+  background-color: rgb(81, 210, 183);
+  padding: 5px 10px 5px 10px;
+  border-radius: 27px;
+}
+/*END*/
+div{
+  color: aliceblue;
+}
+
+.block {
+    height: 2000px;
+}
+.header img {
+    width: 100%;
+}
+.footer-nav {
+    position: fixed;
+    z-index: 99999;
+    bottom: 0;
+    display: none;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+.show, .footer-nav:hover {
+    display: block;
+}
+  </style>
+</head>
+<body id="particles-js">
+  <div id="particles-js"></div>
+  <script type="text/javascript" src="particles.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+    
+
+    <div class="row">
+      <div class="col-sm-12" style="text-align:center;"><h2>Patient's History</h2></div>
+      <div class="col-4 " style="text-align: center;">CASE<br>
+      <div class="list-group" ></div>
+        <script type='text/javascript'>
+          var ul=document.createElement('ul');
+          for(i=0;i<5;i++)
+          {
+              var li=document.createElement('li');
+              li.innerHTML="<button><a href=''>CS101</a></button>";
+              ul.appendChild(li);
+          }
+          document.getElementById('list-group').appendChild(ul);
+          
+          </script>
+        
+    </div>
+      <div class="col-4" style="text-align: center;">REPORT<br>
+      <div class="list-group"></div>
+        <script type='text/javascript'>
+          var ul=document.createElement('ul');
+          for(i=0;i<5;i++)
+          {
+              var li=document.createElement('li');
+              li.innerHTML="<button><a href=''>L101</a></button>";
+              ul.appendChild(li);
+          }
+          document.getElementById('list-group').appendChild(ul);
+          
+          </script>
+    </div>
+      <div class="col-4" style="text-align: center;">MEDICAL<br>
+      <div class="list-group"></div>
+      <script type='text/javascript'>
+        var ul=document.createElement('ul');
+        for(i=0;i<5;i++)
+        {
+            var li=document.createElement('li');
+            li.innerHTML="<button><a href=''>MD101</a></button>";
+            ul.appendChild(li);
+        }
+        document.getElementById('list-group').appendChild(ul);
+        
+        </script>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!--For fill up form-->
+  <div class="row">
+    <div class="col-sm-12" style="text-align:center;"><h2>Fill up form</h2></div>
+  </div>
+    <br>
+    <div class="container">
+      <table class="table table-striped">
+         <tbody>
+            <tr>
+               <td colspan="1">
+                  <form class="well form-horizontal">
+                     <fieldset>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Full Name</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName" placeholder="Full Name" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Address Line 1</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="addressLine1" placeholder="Address Line 1" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Address Line 2</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="addressLine2" placeholder="Address Line 2" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">City</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="city" placeholder="City" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">State/Province/Region</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="state" placeholder="State/Province/Region" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Postal Code/ZIP</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postcode" name="postcode" placeholder="Postal Code/ZIP" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Country</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
+                                 <select class="selectpicker form-control">
+                                    <option>A really long option to push the menu over the edget</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Email</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input id="email" name="email" placeholder="Email" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Phone Number</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                     </fieldset>
+                  </form>
+               </td>
+               <td colspan="1">
+                  <form class="well form-horizontal">
+                     <fieldset>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Full Name</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName" placeholder="Full Name" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Address Line 1</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="addressLine1" placeholder="Address Line 1" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Address Line 2</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="addressLine2" placeholder="Address Line 2" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">City</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="city" placeholder="City" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">State/Province/Region</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="state" placeholder="State/Province/Region" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Postal Code/ZIP</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postcode" name="postcode" placeholder="Postal Code/ZIP" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Country</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group">
+                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
+                                 <select class="selectpicker form-control">
+                                    <option>A really long option to push the menu over the edget</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Email</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input id="email" name="email" placeholder="Email" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                        <div class="form-group">
+                           <label class="col-md-4 control-label">Phone Number</label>
+                           <div class="col-md-8 inputGroupContainer">
+                              <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="form-control" required="true" value="" type="text"></div>
+                           </div>
+                        </div>
+                     </fieldset>
+                  </form>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+  <div class="block"></div>
+    
+<div class="footer-nav">
+    <p>This is my footer</p>
+</div>
+  
 </body>
 </html>
